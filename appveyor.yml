@@ -2,6 +2,9 @@ platform: x64
 configuration: Release
 image:
  - Visual Studio 2019
+install:
+ - curl -O -L https://www.transmissionzero.co.uk/files/software/development/GLUT/freeglut-MSVC.zip
+ - 7z e freeglut-MSVC.zip
 build_script:
  - cmake -DASSIMP_BUILD_SAMPLES=ON -DASSIMP_BUILD_ASSIMP_TOOLS=ON -G "Visual Studio 16 2019" .
- - cmake --build .
+ - cmake --build . --config Release --target INSTALL
