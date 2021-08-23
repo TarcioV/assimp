@@ -2,6 +2,6 @@ platform: x64
 configuration: Release
 image:
  - Visual Studio 2019
- build_script:
+build_script:
  - cmake -DASSIMP_BUILD_SAMPLES=ON -DASSIMP_BUILD_ASSIMP_TOOLS=ON -G "Visual Studio 16 2019" .
  - cmake --build .
