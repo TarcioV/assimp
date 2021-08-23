@@ -6,7 +6,7 @@ install:
  - curl -O -L https://www.transmissionzero.co.uk/files/software/development/GLUT/freeglut-MSVC.zip
  - cd
  - dir /b
- - 7z e freeglut-MSVC.zip -oc:\freeglut
+ - 7z x freeglut-MSVC.zip -oc:\
 build_script:
  - cmake -DASSIMP_BUILD_SAMPLES=ON -DASSIMP_BUILD_ASSIMP_TOOLS=ON -G "Visual Studio 16 2019" .
  - cmake --build . --config Release --target INSTALL
