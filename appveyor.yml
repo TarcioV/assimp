@@ -14,7 +14,7 @@ build_script:
  - cmake -DASSIMP_BUILD_SAMPLES=OFF -DASSIMP_BUILD_ASSIMP_TOOLS=OFF -G "Visual Studio 16 2019" ..
  - cmake --build . --config Release
 after_build:
- - 7z a assimp.zip ./Release/*
+ - 7z a assimp.zip ./build/Release/*
 artifacts:
  - path: assimp.zip
    name: assimp
