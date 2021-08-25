@@ -9,5 +9,12 @@ image:
 # - 7z x freeglut-MSVC.zip -oc:\projects
 # - 7z x freeglut-MSVC.zip -osamples\SimpleOpenGL\GL
 build_script:
- - cmake -DASSIMP_BUILD_SAMPLES=OFF -DASSIMP_BUILD_ASSIMP_TOOLS=OFF -G "Visual Studio 16 2019" .
- - cmake --build . --config Release --target INSTALL
+ - mkdir build
+ - cd build
+ - cmake -DASSIMP_BUILD_SAMPLES=OFF -DASSIMP_BUILD_ASSIMP_TOOLS=OFF -G "Visual Studio 16 2019" ..
+ - cmake --build . --config Release
+after_build:
+ - 7z a assimp.zip ./Release/*
+artifacts:
+ - path: assimp.zip
+   name: assimp
