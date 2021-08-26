@@ -16,5 +16,5 @@ build_script:
 after_build:
  - 7z a assimp.zip C:\projects\install\*
 artifacts:
- - path: assimp.zip
+ - path: build\assimp.zip
    name: assimp
