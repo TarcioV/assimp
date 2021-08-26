@@ -11,10 +11,10 @@ image:
 build_script:
  - mkdir build
  - cd build
- - cmake -DASSIMP_BUILD_SAMPLES=OFF -DASSIMP_BUILD_ASSIMP_TOOLS=OFF -G "Visual Studio 16 2019" ..
- - cmake --build . --config Release
+ - cmake -DCMAKE_INSTALL_PREFIX=C:/projects/install -DASSIMP_BUILD_SAMPLES=OFF -DASSIMP_BUILD_ASSIMP_TOOLS=OFF -G "Visual Studio 16 2019" ..
+ - cmake --build . --config Release --target INSTALL
 after_build:
- - 7z a assimp.zip ./build/Release/*
+ - 7z a assimp.zip ./install/*
 artifacts:
  - path: assimp.zip
    name: assimp
